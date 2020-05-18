@@ -1,26 +1,29 @@
-const formatString = function(string) {
-  if (string.length > 40) {
-    let longString = string.slice(0, 40);
-    return `${longString}...`;
+const countTotalSalary = function(employees) {
+  let sum = 0;
+  // eslint-disable-next-line
+  for (let salaries of Object.values(employees)) {
+    sum += salaries;
   }
-  return string;
+  return sum;
 };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
-console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// вернется оригинальная строка
-
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// вернется форматированная строка
-
-console.log(formatString('Curabitur ligula sapien.'));
-// вернется оригинальная строка
+console.log(countTotalSalary({})); // 0
 
 console.log(
-  formatString(
-    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
-  ),
-);
-// вернется форматированная строка
+  countTotalSalary({
+    mango: 100,
+    poly: 150,
+    alfred: 80,
+  }),
+); // 330
+
+console.log(
+  countTotalSalary({
+    kiwi: 200,
+    lux: 50,
+    chelsy: 150,
+  }),
+); // 400
