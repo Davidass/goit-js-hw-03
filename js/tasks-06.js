@@ -8,7 +8,7 @@ const products = [
 const calculateTotalPrice = function(allProdcuts, productName) {
   // eslint-disable-next-line no-restricted-syntax
   for (const product of allProdcuts) {
-    console.table(product);
+    // console.table(product);
     // eslint-disable-next-line no-unused-vars
     let totalPrice;
     if (product.name === productName) {
